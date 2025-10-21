@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Just Monika</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff6b9d, #ffb6c1, #ffcce0);
+      font-family: 'Courier New', monospace;
+      text-align: center;
+      overflow: hidden;
+      color: #2b2b2b;
+      margin: 0;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 40px 60px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(255, 100, 150, 0.6);
+      animation: pulse 3s infinite alternate;
+    }
+
+    @keyframes pulse {
+      from { transform: scale(1); box-shadow: 0 0 25px rgba(255, 100, 150, 0.4); }
+      to { transform: scale(1.03); box-shadow: 0 0 45px rgba(255, 50, 100, 0.8); }
+    }
+
+    h1 {
+      font-size: 2.3em;
+      margin-bottom: 25px;
+      color: #ff2b5c;
+      text-shadow: 0 0 5px #ff99b6;
+    }
+
+    img {
+      width: 250px;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      margin-bottom: 25px;
+    }
+
+    button {
+      font-size: 1.2em;
+      padding: 15px 30px;
+      margin: 15px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: bold;
+    }
+
+    #sim {
+      background-color: #ff4d79;
+      color: white;
+      box-shadow: 0 5px 15px rgba(255, 0, 100, 0.4);
+    }
+
+    #sim:hover {
+      background-color: #ff2f63;
+      transform: scale(1.1);
+    }
+
+    #nao {
+      background-color: #333;
+      color: white;
+      position: relative;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Just Monika ?</h1>
+    <img src="https://i.pinimg.com/736x/3c/2f/4c/3c2f4c2edd7d9dc8a9d83a02de8f1619.jpg" alt="Monika">
+    <br>
+    <button id="sim" onclick="window.location.href='https://www.youtube.com/watch?v=XE6OOteLPIE&list=RDXE6OOteLPIE&start_radio=1'">Sim</button>
+    <button id="nao">Não</button>
+  </div>
+
+  <script>
+    const nao = document.getElementById('nao');
+    nao.onmouseover = () => {
+      const maxX = window.innerWidth - nao.offsetWidth - 10;
+      const maxY = window.innerHeight - nao.offsetHeight - 10;
+      nao.style.position = 'fixed';
+      nao.style.left = Math.random() * maxX + 'px';
+      nao.style.top = Math.random() * maxY + 'px';
+    };
+  </script>
+</body>
+</html>
